@@ -9,26 +9,20 @@ function Display(props) {
   
   
      const usersList=props.users.map((users)=>{return(
-      <div className='d-inline-flex'>
+      <div key={users.id} className='d-inline-flex'>
       <Card  className='cardWidth m-2 p-2' >
-        <Card.Img className='img' key={users.id} variant="top" src={users.image} />
+        <Card.Img className='img'  variant="top" src={users.image} />
         <Card.Body>
-          <Card.Title key={users.id}>{users.title}</Card.Title>
-          <Card.Text className='max-content' key={users.id}>{users.description}</Card.Text>
-          <Card.Text key={users.id}>$ {users.price}</Card.Text>
-          <Card.Text key={users.id}>{users.category}</Card.Text>
-          <Card.Text><span className='button1' key={users.id}>{users.rating.rate}</span></Card.Text>
+          <Card.Title>{users.title}</Card.Title>
+          <Card.Text className='max-content' >{users.description}</Card.Text>
+          <Card.Text>$ {users.price}</Card.Text>
+          <Card.Text >{users.category}</Card.Text>
+          <Card.Text><span className='button1' >{users.rating.rate}</span></Card.Text>
           <Button variant="primary">Buy product</Button>
         </Card.Body>
       </Card>
       </div>
      )})
-     
-      
-     
-  //   return(
-        
-  //     )})
     
     
   return (
